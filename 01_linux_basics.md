@@ -12,7 +12,7 @@ This document is a beginner-friendly introduction to Linux fundamentals. It expl
     - [PIPE |](#09-pipes--)
     - [File-maintenance-commands](#10-file-maintenance-commands)
     - [File-text-processors-commands](#11-file--text-processors-commands)
-    - [grepegrep---text-processors-commands](#12-grepegrep---text-processors-commands)
+    - [grepegrep-text-processors-commands](#12-grepegrep---text-processors-commands)
     - [text-processors-commands](#13-sortunip---text-processors-commands)
     - [compare-files-diff-and-cmp](#14-compare-files-diff-and-cmp)
     - [vi-and-vim-editors](#15-diffrence-between-vi-and-vim-editors)
@@ -99,15 +99,17 @@ This document is a beginner-friendly introduction to Linux fundamentals. It expl
 - Tech companies
 - CLoud and web servers
 
-
+------------------------------------------------------------------------------------
 ### 02. What is the ROOT?
+------------------------------------------------------------------------------------
 * There are 3 types of root on linux system
 1. root account: root is an account or a username on linux machine and it is the most powerful account which has access to all commands and files 
 2. Root as /: the very firat directory in the linux file system is called root and it is represented by a forward slash (/). all other directories and files are organized under this root directory.
 3. Root home directyory: the root user account also has a directory located in /root which is called root home directory.
 
-
+------------------------------------------------------------------------------------
 ### 03. Introduction to Filesystem
+------------------------------------------------------------------------------------
 * it is a system used by an operating system to manage files. the system controls how data is saved or retrieved from storage devices. without a file system, data would be stored in a large block with no way to tell where one piece of data ends and the next begins. by organizing data into files and directories, file systems make it easy to find and access the data you need.
 * Operating system stores files and directories in an oraganized and structured way
   - systemconfirguration file = Folder A
@@ -268,8 +270,9 @@ or
 | 6               | Read and write permission          | rw-         |
 | 7               | Read, write and execute permission | rwx         |
 
-
+------------------------------------------------------------------------------------
 ### 04. File Ownership
+------------------------------------------------------------------------------------
 * There are 2 owners of a file or directory
   - user and group
 
@@ -294,8 +297,9 @@ or
 
   - ls -l ?bcd*
   - ls -l *[cd]*
-
+------------------------------------------------------------------------------------
 ### 06. Access Control List (ACL)
+------------------------------------------------------------------------------------
 * **what is ACL?**
   - Access control list (ACL) provides an additional, more flexble permission mechanism for file system. it is designed to assist with UNIX file permissions. ACL allows you to give permissions for any user or group to any disc resource.
 
@@ -316,7 +320,9 @@ or
   - setfacl -x u:user1 file1.txt = to remove ACL permissions for user1 on file1.txt
   - getfacl file1.txt = to display ACL permissions for file1.txt
 
+------------------------------------------------------------------------------------
 ### 07. Help Commands
+------------------------------------------------------------------------------------
 * There are 3 types of help commands
   - whatis command
   - command --help
@@ -331,7 +337,9 @@ or
 
 * Hitting UP arrow key allows you to scroll through the command history and execute previous commands without retyping them.
 
+------------------------------------------------------------------------------------
 ### 08. Adding Text to Files(Redirection)
+------------------------------------------------------------------------------------
 * 3 Simple ways to add text to a file
   - vi 
   - redirect command output > or >>
@@ -340,14 +348,18 @@ or
   - echo "this line first line" > file1.txt = to add text to a file, if the file already exists, it will overwrite the existing content of the file
   - echo "this line second line" >> file1.txt = to add text to a file
 
-### 09. PIPEs  |
+------------------------------------------------------------------------------------
+### 09. PIPEs |
+------------------------------------------------------------------------------------
 * A pipe is used by the shell to connect the output of one command directly to the input of another command.
 * the symbol for a pipe is the vertical bar (|) the command syntax is as follows
   - command1 | command2
 
   - ls -ltr | more = to display the output of ls -ltr command one page at a time 
 
+------------------------------------------------------------------------------------
 ### 10. FILE MAINTENANCE COMMANDS
+------------------------------------------------------------------------------------
   - cp
   - rm
   - mv
@@ -368,7 +380,9 @@ or
   - head -2 file.txt = to display the first 2 lines of a file
   - tail -2 file.txt = to display the last 2 lines of a file
 
+------------------------------------------------------------------------------------
 ### 11. File / Text processors Commands
+------------------------------------------------------------------------------------
   - cut
   - awk
   - grep and egrep
@@ -376,7 +390,9 @@ or
   - uniq
   - wd
 
+------------------------------------------------------------------------------------
 ### 12. grep/egrep - Text Processors Commands
+------------------------------------------------------------------------------------
 * What is grep ?
   - The grep command which stands for "global regular expression print", process text line by line and prints any lines which match a specified pattern. it is used to search for specific patterns in files or output of other commands.
 
@@ -394,8 +410,9 @@ or
   - ls -l | grep -i file.txt  = to search for a pattern in the output of another command, ignoring case
   - egrep -i "file.txt"|"file2.txt name = to search for multiple patterns in a file, ignoring case
 
-
-### 13. sort/unip - Text Processors Commands 
+------------------------------------------------------------------------------------
+### 13. sort/unip - Text Processors Commands
+------------------------------------------------------------------------------------
 * What are sort and unip commands?
 
   - Sort command sorts in alphabetical order
@@ -412,7 +429,9 @@ or
 
   - uniq file.txt = to filter out duplicate lines from a sorted text file
 
+------------------------------------------------------------------------------------
 ### 14. Compare Files (diff and cmp)
+------------------------------------------------------------------------------------
 
 - diff command compares two files line by line and displays the differences between them. it is used to identify changes or differences between two versions of a file.
 
@@ -430,10 +449,14 @@ or
 - tar cvf iafzal.tar file1.txt file2.txt = to create a tar archive of multiple files
 - tar cvf iafzal.tar . = to create a tar archive of a directory and its contents
 
+------------------------------------------------------------------------------------
 ### 15. DIffrence Between vi and vim Editors
+------------------------------------------------------------------------------------
 As far as funcctionality is concerned, there is no difference between vi and vim editors. vim is an improved version of vi editor, it has more features and capabilities than vi editor. vim stands for "Vi IMproved" and it is a more powerful and feature-rich version of the original vi editor. vim includes additional features such as syntax highlighting, multiple undo levels, and support for plugins and extensions.
 
+------------------------------------------------------------------------------------
 ### 16. User Account Management
+------------------------------------------------------------------------------------
 * Commands for user account management
   - useradd
   - groupadd
@@ -460,13 +483,15 @@ As far as funcctionality is concerned, there is no difference between vi and vim
   - grep username /etc/group      = to check if a user is a member of a group
   - chgrp -R groupname username   = to change the group ownership of a user's home directory and its contents to a group
 
-
+------------------------------------------------------------------------------------
 ### 17. Enable password aging
+------------------------------------------------------------------------------------
 * chage -M 30 username = to set the maximum number of days a password is valid to 30 days for a user account
 * chage -l username = to check the password aging information for a user account
 
-
+------------------------------------------------------------------------------------
 ### 18. Linux Account Authentication
+------------------------------------------------------------------------------------
 * Linux account authentication is the process of verifying the identity of a user who is trying to access
 
 * types of authentication
@@ -480,8 +505,9 @@ As far as funcctionality is concerned, there is no difference between vi and vim
 * IBM Directory Server = (IBM's implementation of LDAP)
 * LDAP = Lightweight Directory Access Protocol
 
-
+------------------------------------------------------------------------------------
 ### 19. System Utility Commands
+------------------------------------------------------------------------------------
 * date     = to display or set the system date and time
 * uptime   = to display how long the system has been running and the current load average
 * hostname = to display or set the system's hostname
@@ -490,8 +516,9 @@ As far as funcctionality is concerned, there is no difference between vi and vim
 * cal      = to display a calendar for a specific month or year
 * bc       = to perform basic arithmetic calculations from the command line
 
-
+------------------------------------------------------------------------------------
 ### 20. Processes and Jobs
+------------------------------------------------------------------------------------
 * A process is an instance of a running program. it is an executing instance of a program that can be managed and controlled by the operating system. each process has its own unique process ID (PID) and can be in different states such as running, sleeping, or stopped.
 
 * Application = a program that is designed to perform a specific task or set of tasks for the user. 
@@ -501,8 +528,9 @@ Daemon = a background process that runs continuously and performs specific tasks
 * Threads = a thread is a lightweight process that can run concurrently with other threads within the same process. 
 * job = a job is a process that is running in the background or foreground and can be managed using job control commands.
 
-
+------------------------------------------------------------------------------------
 ### 21. systemctl command
+------------------------------------------------------------------------------------
 * systemctl is a command-line utility used to control and manage the systemd system and service manager in Linux. it is used to start, stop, restart, enable, disable, and check the status of services and daemons on a Linux system.
 * Syatemctl command is a new tool to control system services.
 
@@ -520,8 +548,9 @@ Daemon = a background process that runs continuously and performs specific tasks
   - systemctl halt
   - systemctl reboot
 
-
+------------------------------------------------------------------------------------
 ### 22. ps command
+------------------------------------------------------------------------------------
 * ps command stands for process status and it display all the currently running processes in the Linux system
 
 * Usage Examples
@@ -537,8 +566,9 @@ Daemon = a background process that runs continuously and performs specific tasks
   - ps -ef         = shows all running processes in standard format
   - ps -u username = shows all running processes for a specific user
 
-
+------------------------------------------------------------------------------------
 ### 23. top command
+------------------------------------------------------------------------------------
 * top command is used to show the linux processes and it provides a real-time view of the running system.
 * This command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.
 * When the top command is executed then it goes into interactive mode and you can exit out by hitting **"q"** key.
@@ -565,8 +595,9 @@ Daemon = a background process that runs continuously and performs specific tasks
 - top then press r  = to renice a process by entering its PID and new priority
 - top then M and P  = to sort processes by memory or CPU usage
 
-
+------------------------------------------------------------------------------------
 ### 24. Kill command
+------------------------------------------------------------------------------------
 * kill command is used to terminate process manually
 * it sends a signal which ultimately terminates or kills a particular process or group of processes.
 
@@ -579,8 +610,9 @@ Daemon = a background process that runs continuously and performs specific tasks
 - kill -9              = to forcefully kill a process with a specific PID
 - kill -15             = to gracefully terminate a process with a specific PID
 
-
+------------------------------------------------------------------------------------
 ### 25. Process Signals in Linux
+------------------------------------------------------------------------------------
 * Process: Running Program in Computer.
 - it is an instance of a program that is being executed by the operating system. each process has its own unique process ID (PID) and can be in different states such as running, sleeping, or stopped.
 
@@ -592,8 +624,9 @@ Daemon = a background process that runs continuously and performs specific tasks
 * Process Signal: Send Signals to Running Processes
   - Control Behavior of Process
 
-
+------------------------------------------------------------------------------------
 ### 26. Crontab Command
+------------------------------------------------------------------------------------
 * Crontab command is used to schedule tasks to run automatically at specified intervals. it is commonly used for automating system maintenance or administration tasks, such as backups, updates, and monitoring.
 
 * Usage:
@@ -649,8 +682,9 @@ enter: 21 16 * 10 * echo "this is my second crontab entry" > crontab-entry2
   - cd cron.hourly
   - cp /path/to/your/script.sh . = to copy your script to the cron.hour
 
-
+------------------------------------------------------------------------------------
 ### 27. at Command
+------------------------------------------------------------------------------------
 * at command is used to schedule a one-time task to run at a specific time in the future. it is commonly used for scheduling tasks that need to be executed only once, such as sending an email or running a script at a specific time.
 * When the command is run it will enter interactive mode and you can get out by pressing Ctrl D
 
@@ -666,8 +700,9 @@ enter: 21 16 * 10 * echo "this is my second crontab entry" > crontab-entry2
   - enter: echo "this is my first at entry" > at-entry
   - Ctrl D = to save and exit the at command
 
-
+------------------------------------------------------------------------------------
 ### 28. Log Monitoring
+------------------------------------------------------------------------------------
 * Linux system logs are stored in the /var/log directory. these logs contain information about system events, errors, and other important information that can be used for troubleshooting and monitoring the system.
 
   - Log Directory: /var/log
