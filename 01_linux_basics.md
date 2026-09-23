@@ -1,4 +1,38 @@
-#### What is Operating system?
+This document is a beginner-friendly introduction to Linux fundamentals. It explains the basics of how Linux works, why it is important, and how users interact with it from the command line and other importent ps and systemctl and kill commends.
+
+* *Main topics covered*
+    - [What is Operationg Syatem](#01-what-is-operating-system)
+    - [Root](#02-what-is-the-root)
+    - [Filesystem](#03-introduction-to-filesystem)
+    - [File-Wwnership](#04-file-ownership)
+    - [Wildcards](#05-wildcards-)
+    - [ACL](#06-access-control-list-acl)
+    - [HELP](#07-help-commands)
+    - [adding-text](#08-adding-text-to-filesredirection)
+    - [PIPE |](#09-pipes--)
+    - [File-maintenance-commands](#10-file-maintenance-commands)
+    - [File-text-processors-commands](#11-file--text-processors-commands)
+    - [grepegrep---text-processors-commands](#12-grepegrep---text-processors-commands)
+    - [text-processors-commands](#13-sortunip---text-processors-commands)
+    - [compare-files-diff-and-cmp](#14-compare-files-diff-and-cmp)
+    - [vi-and-vim-editors](#15-diffrence-between-vi-and-vim-editors)
+    - [user-account-managemen](#16-user-account-management)
+    - [enable-password-aging](#17-enable-password-aging)
+    - [linux-account-authentication](#18-linux-account-authentication)
+    - [system-utility-commands](#19-system-utility-commands)
+    - [processes-and-jobs](#20-processes-and-jobs)
+    - [systemctl-command](#21-systemctl-command)
+    - [ps-command](#22-ps-command)
+    - [top-command](#23-top-command)
+    - [kill-command](#24-kill-command)
+    - [process-signals-in-linux](#25-process-signals-in-linux)
+    - [crontab](#26-crontab-command)
+    - [at-command](#27-at-command)
+    - [log-monitoring](#28-log-monitoring)
+
+------------------------------------------------------------------------------------
+### 01. What is Operating system?
+------------------------------------------------------------------------------------
 - An operating system is system software that manages computer hardware and software resources and provides common services for computer programs. 
 - The operating system is a vital component of the system software in a computer system. Application programs usually require an operating system to function.
 
@@ -12,13 +46,13 @@
 4. Embedded Operating System e.g, routers, smart TVs, VxWorks, automobiles, home appliances, and other devices that are not traditional computers.
 5. Real-Time Operating System (RTOS) e.g, used in critical systems like medical equipment, car ECUs, and industrial control systems, where timely and deterministic responses are crucial.  
 
-#### What is Linux?
+* **What is Linux?**
 - linux, in simple terms, is a free and open-source operating system.
 - its similar to windows and macOS, but it is based on the Linux kernel, which was created by Linus Torvalds in 1991.
 - Linux is very popluar for its stability, security, and flexibility. it can be modified and distributed by anyone. which has led to many diffrent versions, known as distribution is tailored for diffrent uses and preferences.
 - its open-source nature means that a community of developers and users contribute to its development.
 
-#### Why learn Linux or its importance
+* **Why learn Linux or its importance**
 - Widely used in servers and cloud computing 
 - free software and open-source nature
 - strong security and stability
@@ -26,7 +60,7 @@
 - community support
 - Understanding of other operating systems
 
-#### Linux flavors or distributions
+* **Linux flavors or distributions**
 - Ubuntu
 - Fedora
 - Debian
@@ -39,18 +73,7 @@
 - gentoo
 - alpine linux
 
-
-#### Linux Users
-- Linux is used by a wide range of users and organizations due to its versatility, stability and open-source nature.
-- Developers
-- Educations Institutions
-- Governmet agencies
-- Businesses and Enterprises
-- Tech companies
-- CLoud and web servers
-
-
-#### Important Things to Remember in Linux
+* **Important Things to Remember in Linux**
 * Linux is super-user account called root
     - root is the most powerful account that can create, modify, and delete accounts and make changes to system configuration 
 * Linux is case-sensitive system
@@ -60,24 +83,31 @@
 * Linux is mostly CLI not GUI
 * Linux is very flexible as compared to other operating systems.
 
-
-#### Access Linux via Putty or SSh
+* **Access Linux via Putty or SSh**
 - ssh -l username 192.168.1.5
 
-
-#### Command Prompts and Getting Prompts Back
+* **Command Prompts and Getting Prompts Back**
 * What are command prompts?
   - A coommand prompt, also referred to somply as a prompt, is a short text at the start of the command line followed by prompt symbol on a command line interface. It indicates that the system is ready to accept commands from the user. The prompt typically includes information such as the username, hostname, and current working directory.
 
+* **Linux Users**
+- Linux is used by a wide range of users and organizations due to its versatility, stability and open-source nature.
+- Developers
+- Educations Institutions
+- Governmet agencies
+- Businesses and Enterprises
+- Tech companies
+- CLoud and web servers
 
-#### What is the ROOT?
+
+### 02. What is the ROOT?
 * There are 3 types of root on linux system
 1. root account: root is an account or a username on linux machine and it is the most powerful account which has access to all commands and files 
 2. Root as /: the very firat directory in the linux file system is called root and it is represented by a forward slash (/). all other directories and files are organized under this root directory.
 3. Root home directyory: the root user account also has a directory located in /root which is called root home directory.
 
 
-#### Introduction to Filesystem
+### 03. Introduction to Filesystem
 * it is a system used by an operating system to manage files. the system controls how data is saved or retrieved from storage devices. without a file system, data would be stored in a large block with no way to tell where one piece of data ends and the next begins. by organizing data into files and directories, file systems make it easy to find and access the data you need.
 * Operating system stores files and directories in an oraganized and structured way
   - systemconfirguration file = Folder A
@@ -88,7 +118,7 @@
   - ext4, xfs, btrfs, zfs, ntfs, fat32 and so on
 
 
-#### File System Structure and its Description 
+* **File System Structure and its Description** 
   - /boot               Contains file that is used by the boot loader(grub.cfg) to boot the system
   - /root               root user home directory. it is not same as /
   - /dev                System devices (e.g. disk, cdrom, speakers, flashdrive, keyboard etc.)
@@ -118,7 +148,7 @@
 * ls stand for list it list all the directiries/files with a current working directory  2
 
 
-#### Linux file or Directory Properties
+* **Linux file or Directory Properties**
   - Each file or directory in linux has detail information or properties
 
 
@@ -129,14 +159,12 @@
 |-rw-r--r--. v|  1       | root   | 0       |  feb    | 27    | 13:33 | file1 |
 
 
-
-
 * anything starting with d is a directory, - is a file and l is a symbolic link
 * anything starting with l is link, its link with the file or directory it is pointing to, and it is not a real file or directory. it is just a pointer to the file or directory it is linked to. if you delete the link, the original file or directory will still be there. but if you delete the original file or directory, the link will be broken and will not work anymore.
 * LS -L
 
 
-#### FILE SYSTEM PATHS
+* **FILE SYSTEM PATHS**
 * There are two paths to navigate to a filesystem.
   - absolute Path
   - relative Path
@@ -150,24 +178,22 @@
   - cd /var
   - cd log
 
-#### Creating Files and Directories
+* **Creating Files and Directories**
 * Creating files
   - Touch
   - cp
   - vi
 
-* Creating directories
+* **Creating directories**
   - mkdir
 
-
-#### Copying Directories
+* **Copying Directories**
 * Command to copy directory
   - cp
 * To copy a directory on Linux, you have to execute the "cp" command with the "-R" option for recursive and specify the source destination directories to be copied
   - cp -R <source_folder> <destination_folder>
 
-
-#### Find Files and Directories 
+* **Find Files and Directories** 
 - Two main commands are used to fine files and directories on linux system
 
 * 1. find
@@ -180,23 +206,7 @@
 
 * Locate uses a prebuilt database, which should be reqularly updated using the "updatedb" command. while find iterates over a filesystem to locate files. Thus, locate is much faster than find, but can be inaccurate if the database (can be seen as a cache) is not updated.
 
-
-#### WildCards (*,?,^,[])
-* A wildcard is a character that can be used as a substitute for any of a class of characters in a search 
-  - *  -represents zero or more characters
-  - ?  -represents a single character
-  - ^  -represents a range of characters
-  - [] -represents a set of characters
-
-  - rm abc*
-  - touch abcd{1..9}-xyz
-  - ls -l abc*
-
-  - ls -l ?bcd*
-  - ls -l *[cd]*
-
-
-#### Linux File Types
+* **Linux File Types**
 
 
 | File Symbol    |       Meaning               |                                        |
@@ -211,7 +221,7 @@
 
  
 
-#### File Permissions
+* **File Permissions**
 * UNIX is a multi-user system. every file and directory in your account can be protected from or made accessible to other users by changing its access permissions.
 Every user has responcebility for controlling access to their files.
 
@@ -238,12 +248,11 @@ Every user has responcebility for controlling access to their files.
   - chmod u+x file1.txt = to add execute permission for user
 
 
-#### Permission using Numeric mode
+* **Permission using Numeric mode**
 * Permission to a file and directory can also be assigned numerically using chmod command. in numeric mode, each permission is represented by a number.
   - chmod ugo+r FILE
 or
   - chmod 444 FILE
-
 
 * The table below assigan numbers to permission type
 
@@ -260,7 +269,7 @@ or
 | 7               | Read, write and execute permission | rwx         |
 
 
-#### File Ownership
+### 04. File Ownership
 * There are 2 owners of a file or directory
   - user and group
 
@@ -272,7 +281,21 @@ or
 * Recursive ownership change option (Cascade)
   - -R
 
-#### Access Control List (ACL)
+### 05. WildCards (*,?,^,[])
+* A wildcard is a character that can be used as a substitute for any of a class of characters in a search 
+  - *  -represents zero or more characters
+  - ?  -represents a single character
+  - ^  -represents a range of characters
+  - [] -represents a set of characters
+
+  - rm abc*
+  - touch abcd{1..9}-xyz
+  - ls -l abc*
+
+  - ls -l ?bcd*
+  - ls -l *[cd]*
+
+### 06. Access Control List (ACL)
 * **what is ACL?**
   - Access control list (ACL) provides an additional, more flexble permission mechanism for file system. it is designed to assist with UNIX file permissions. ACL allows you to give permissions for any user or group to any disc resource.
 
@@ -293,14 +316,14 @@ or
   - setfacl -x u:user1 file1.txt = to remove ACL permissions for user1 on file1.txt
   - getfacl file1.txt = to display ACL permissions for file1.txt
 
-#### Help Commands
+### 07. Help Commands
 * There are 3 types of help commands
   - whatis command
   - command --help
   - man command
 
 
-#### TAB Completion and UP arrow
+* **TAB Completion and UP arrow**
 * Hitting TAB key completes the available commands, files or directories.
   - chm TAB
   - ls j<TAB>
@@ -308,7 +331,7 @@ or
 
 * Hitting UP arrow key allows you to scroll through the command history and execute previous commands without retyping them.
 
-#### Adding Text to Files(Redirection)
+### 08. Adding Text to Files(Redirection)
 * 3 Simple ways to add text to a file
   - vi 
   - redirect command output > or >>
@@ -317,14 +340,14 @@ or
   - echo "this line first line" > file1.txt = to add text to a file, if the file already exists, it will overwrite the existing content of the file
   - echo "this line second line" >> file1.txt = to add text to a file
 
-#### PIPEs  |
+### 09. PIPEs  |
 * A pipe is used by the shell to connect the output of one command directly to the input of another command.
 * the symbol for a pipe is the vertical bar (|) the command syntax is as follows
   - command1 | command2
 
   - ls -ltr | more = to display the output of ls -ltr command one page at a time 
 
-#### FILE MAINTENANCE COMMANDS
+### 10. FILE MAINTENANCE COMMANDS
   - cp
   - rm
   - mv
@@ -333,7 +356,7 @@ or
   - chgrp
   - chown
 
-#### File Display Commands
+* **File Display Commands**
   - cat
   - more
   - less
@@ -345,7 +368,7 @@ or
   - head -2 file.txt = to display the first 2 lines of a file
   - tail -2 file.txt = to display the last 2 lines of a file
 
-#### File / Text processors Commands
+### 11. File / Text processors Commands
   - cut
   - awk
   - grep and egrep
@@ -353,7 +376,7 @@ or
   - uniq
   - wd
 
-#### grep/egrep - Text Processors Commands
+### 12. grep/egrep - Text Processors Commands
 * What is grep ?
   - The grep command which stands for "global regular expression print", process text line by line and prints any lines which match a specified pattern. it is used to search for specific patterns in files or output of other commands.
 
@@ -372,7 +395,7 @@ or
   - egrep -i "file.txt"|"file2.txt name = to search for multiple patterns in a file, ignoring case
 
 
-#### sort/unip - Text Processors Commands 
+### 13. sort/unip - Text Processors Commands 
 * What are sort and unip commands?
 
   - Sort command sorts in alphabetical order
@@ -389,7 +412,7 @@ or
 
   - uniq file.txt = to filter out duplicate lines from a sorted text file
 
-#### Compare Files (diff and cmp)
+### 14. Compare Files (diff and cmp)
 
 - diff command compares two files line by line and displays the differences between them. it is used to identify changes or differences between two versions of a file.
 
@@ -399,7 +422,7 @@ or
 - diff -i file.txt file2.txt = to compare two files and ignore case differences
 
 
-#### Compress and un-Compress Files
+* **Compress and un-Compress Files**
 - tar 
 - gzip
 - gunzip
@@ -407,10 +430,10 @@ or
 - tar cvf iafzal.tar file1.txt file2.txt = to create a tar archive of multiple files
 - tar cvf iafzal.tar . = to create a tar archive of a directory and its contents
 
-#### DIffrence Between vi and vim Editors
+### 15. DIffrence Between vi and vim Editors
 As far as funcctionality is concerned, there is no difference between vi and vim editors. vim is an improved version of vi editor, it has more features and capabilities than vi editor. vim stands for "Vi IMproved" and it is a more powerful and feature-rich version of the original vi editor. vim includes additional features such as syntax highlighting, multiple undo levels, and support for plugins and extensions.
 
-#### User Account Management
+### 16. User Account Management
 * Commands for user account management
   - useradd
   - groupadd
@@ -438,12 +461,12 @@ As far as funcctionality is concerned, there is no difference between vi and vim
   - chgrp -R groupname username   = to change the group ownership of a user's home directory and its contents to a group
 
 
-#### Enable password aging
+### 17. Enable password aging
 * chage -M 30 username = to set the maximum number of days a password is valid to 30 days for a user account
 * chage -l username = to check the password aging information for a user account
 
 
-#### Linux Account Authentication
+### 18. Linux Account Authentication
 * Linux account authentication is the process of verifying the identity of a user who is trying to access
 
 * types of authentication
@@ -458,7 +481,7 @@ As far as funcctionality is concerned, there is no difference between vi and vim
 * LDAP = Lightweight Directory Access Protocol
 
 
-#### System Utility Commands
+### 19. System Utility Commands
 * date     = to display or set the system date and time
 * uptime   = to display how long the system has been running and the current load average
 * hostname = to display or set the system's hostname
@@ -468,7 +491,7 @@ As far as funcctionality is concerned, there is no difference between vi and vim
 * bc       = to perform basic arithmetic calculations from the command line
 
 
-#### Processes and Jobs
+### 20. Processes and Jobs
 * A process is an instance of a running program. it is an executing instance of a program that can be managed and controlled by the operating system. each process has its own unique process ID (PID) and can be in different states such as running, sleeping, or stopped.
 
 * Application = a program that is designed to perform a specific task or set of tasks for the user. 
@@ -479,7 +502,7 @@ Daemon = a background process that runs continuously and performs specific tasks
 * job = a job is a process that is running in the background or foreground and can be managed using job control commands.
 
 
-#### systemctl command
+### 21. systemctl command
 * systemctl is a command-line utility used to control and manage the systemd system and service manager in Linux. it is used to start, stop, restart, enable, disable, and check the status of services and daemons on a Linux system.
 * Syatemctl command is a new tool to control system services.
 
@@ -498,7 +521,7 @@ Daemon = a background process that runs continuously and performs specific tasks
   - systemctl reboot
 
 
-#### ps command
+### 22. ps command
 * ps command stands for process status and it display all the currently running processes in the Linux system
 
 * Usage Examples
@@ -515,7 +538,7 @@ Daemon = a background process that runs continuously and performs specific tasks
   - ps -u username = shows all running processes for a specific user
 
 
-#### top command
+### 23. top command
 * top command is used to show the linux processes and it provides a real-time view of the running system.
 * This command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.
 * When the top command is executed then it goes into interactive mode and you can exit out by hitting **"q"** key.
@@ -543,7 +566,7 @@ Daemon = a background process that runs continuously and performs specific tasks
 - top then M and P  = to sort processes by memory or CPU usage
 
 
-#### Kill command
+### 24. Kill command
 * kill command is used to terminate process manually
 * it sends a signal which ultimately terminates or kills a particular process or group of processes.
 
@@ -557,7 +580,7 @@ Daemon = a background process that runs continuously and performs specific tasks
 - kill -15             = to gracefully terminate a process with a specific PID
 
 
-#### Process Signals in Linux
+### 25. Process Signals in Linux
 * Process: Running Program in Computer.
 - it is an instance of a program that is being executed by the operating system. each process has its own unique process ID (PID) and can be in different states such as running, sleeping, or stopped.
 
@@ -570,7 +593,7 @@ Daemon = a background process that runs continuously and performs specific tasks
   - Control Behavior of Process
 
 
-#### Crontab Command
+### 26. Crontab Command
 * Crontab command is used to schedule tasks to run automatically at specified intervals. it is commonly used for automating system maintenance or administration tasks, such as backups, updates, and monitoring.
 
 * Usage:
@@ -627,7 +650,7 @@ enter: 21 16 * 10 * echo "this is my second crontab entry" > crontab-entry2
   - cp /path/to/your/script.sh . = to copy your script to the cron.hour
 
 
-#### at Command
+### 27. at Command
 * at command is used to schedule a one-time task to run at a specific time in the future. it is commonly used for scheduling tasks that need to be executed only once, such as sending an email or running a script at a specific time.
 * When the command is run it will enter interactive mode and you can get out by pressing Ctrl D
 
@@ -644,7 +667,7 @@ enter: 21 16 * 10 * echo "this is my second crontab entry" > crontab-entry2
   - Ctrl D = to save and exit the at command
 
 
-#### Log Monitoring
+### 28. Log Monitoring
 * Linux system logs are stored in the /var/log directory. these logs contain information about system events, errors, and other important information that can be used for troubleshooting and monitoring the system.
 
   - Log Directory: /var/log
