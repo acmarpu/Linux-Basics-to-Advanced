@@ -1,3 +1,8 @@
+This document is an introduction to Linux networking and remote connectivity. It focuses on how Linux machines communicate with each other over a network and how to manage network services securely.
+
+* *Main topics covered*
+    - []()
+
 #### Client & Server Relationship
 - **Client:** A client is a computer or a program that, as part of its operation, relies on sending a request to another program or a computer hardware or software that accesses a service made available by a server.
 
